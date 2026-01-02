@@ -90,19 +90,26 @@ body {
 }
 
 .post-content pre {
-  padding: 1.25rem;
+  padding: 0;
   overflow-x: auto;
-  background: #1f2937;
+  background: #0d1117;
   border-radius: 0.5rem;
   margin: 2rem 0;
   line-height: 1.6;
 }
 
 .post-content pre code {
+  display: block;
   background: transparent;
-  padding: 0;
-  color: #e5e7eb;
+  padding: 1.25rem;
+  color: #e6edf3;
   font-size: 0.9rem;
+}
+
+/* Highlight.js overrides */
+.post-content pre code.hljs {
+  padding: 1.25rem;
+  background: #0d1117;
 }
 
 /* Blockquotes - Medium Style */

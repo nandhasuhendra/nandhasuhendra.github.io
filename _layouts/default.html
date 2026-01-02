@@ -17,6 +17,11 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
+      
+      // Initialize syntax highlighting
+      if (typeof hljs !== 'undefined') {
+        hljs.highlightAll();
+      }
     });
   </script>
 </body>
