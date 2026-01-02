@@ -18,7 +18,7 @@ description: Articles about backend development, Ruby on Rails, APIs, and testin
           <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
         </div>
         <input type="text" id="search-input" placeholder="Search posts by title or category..."
-          class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none" />
+          class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent outline-none" />
       </div>
     </header>
 
@@ -42,7 +42,7 @@ description: Articles about backend development, Ruby on Rails, APIs, and testin
       <i data-lucide="search-x" class="w-16 h-16 mx-auto mb-4 text-gray-400"></i>
       <p class="text-xl text-gray-500">No posts found matching your search.</p>
       <button onclick="document.getElementById('search-input').value='';searchPosts();showPage(1);"
-        class="mt-4 text-blue-600 hover:underline">
+        class="mt-4 text-gray-900 hover:underline">
         Clear search
       </button>
     </div>
@@ -192,7 +192,7 @@ description: Articles about backend development, Ruby on Rails, APIs, and testin
     pageBtn.textContent = pageNum;
     pageBtn.onclick = () => showPage(pageNum);
     pageBtn.className = pageNum === currentPage
-      ? 'px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold'
+      ? 'px-4 py-2 bg-gray-900 text-white rounded-lg font-semibold'
       : 'px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors';
     document.getElementById('page-numbers').appendChild(pageBtn);
   }
