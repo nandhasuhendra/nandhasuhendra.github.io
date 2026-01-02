@@ -2,36 +2,82 @@
 layout: default
 ---
 
+<!-- Hero Banner Section -->
+<section class="bg-base-500 py-20 sm:py-24">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-<section class="bg-white border-b">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
-    <div class="text-center">
-      <h1 class="text-5xl sm:text-6xl font-bold mb-6 text-gray-900">
-        {{ site.title }}
-      </h1>
+      <!-- Left: Text Content -->
+      <div class="space-y-6">
+        <div class="space-y-4">
+          <h1 class="text-5xl sm:text-6xl font-bold text-gray-900 leading-tight">
+            Hi, I'm {{ site.author.name }}
+          </h1>
+          <p class="text-xl text-gray-700">{{ site.tagline }}</p>
+        </div>
 
-      <p class="text-2xl mb-4 text-blue-600 font-semibold">
-        {{ site.tagline }}
-      </p>
+        <div class="text-lg text-gray-600 leading-relaxed space-y-4 max-w-lg">
+          <p>{{ site.author.bio }}</p>
+        </div>
 
-      <p class="text-xl mb-8 text-gray-600 max-w-2xl mx-auto">
-        {{ site.author.bio }}
-      </p>
+        <!-- Contact Section -->
+        <div class="pt-8">
+          <h2 class="text-xl font-bold text-gray-900 mb-6">Contact Me :</h2>
 
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="{{ '/posts/' | relative_url }}"
-          class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-          Read Articles
-        </a>
-        <a href="{{ '/projects/' | relative_url }}"
-          class="px-8 py-3 bg-gray-200 text-gray-900 font-semibold rounded-lg hover:bg-gray-300 transition-colors">
-          View Projects
-        </a>
+          <div class="space-y-3">
+            {% if site.author.social.github %}
+            <a href="https://github.com/{{ site.author.social.github }}" target="_blank"
+              class="flex items-center gap-3 text-gray-700 hover:text-gray-900 transition-colors">
+              <i data-lucide="github" class="w-5 h-5"></i>
+              <span>Follow on GitHub</span>
+            </a>
+            {% endif %}
+
+            {% if site.author.social.linkedin %}
+            <a href="https://linkedin.com/in/{{ site.author.social.linkedin }}" target="_blank"
+              class="flex items-center gap-3 text-gray-700 hover:text-gray-900 transition-colors">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+              <span>Follow on LinkedIn</span>
+            </a>
+            {% endif %}
+
+            <a href="https://www.threads.com/@nandha_suhendra" target="_blank"
+              class="flex items-center gap-3 text-gray-700 hover:text-gray-900 transition-colors">
+              <i data-lucide="at-sign" class="w-5 h-5"></i>
+              <span>Follow on Threads</span>
+            </a>
+
+            {% if site.author.social.email %}
+            <a href="mailto:{{ site.author.social.email }}"
+              class="flex items-center gap-3 text-gray-700 hover:text-gray-900 transition-colors">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              <span>{{ site.author.social.email }}</span>
+            </a>
+            {% endif %}
+          </div>
+        </div>
       </div>
+
+      <!-- Right: Avatar/Image -->
+      <div class="flex justify-center lg:justify-end">
+        <div class="relative w-96 h-96">
+          <div class="absolute inset-0 bg-gray-800 rounded-3xl transform rotate-6 shadow-xl"></div>
+          <div class="absolute inset-0 bg-white rounded-3xl overflow-hidden shadow-lg">
+            {% if site.author.avatar %}
+            <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}"
+              class="w-full h-full object-cover">
+            {% else %}
+            <div class="w-full h-full flex items-center justify-center bg-gray-100">
+              <div class="text-9xl">👨‍💻</div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-
 
 <section class="bg-white py-16">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,32 +94,14 @@ layout: default
     </div>
 
     <div class="mt-12 text-center">
-      <a href="{{ '/posts/' | relative_url }}" class="text-blue-600 font-semibold hover:underline">
+      <a href="{{ '/posts/' | relative_url }}" class="text-gray-900 font-semibold hover:underline">
         View All Articles →
       </a>
     </div>
   </div>
 </section>
 
-
 <section class="bg-gray-50 py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mb-8">
-      <h2 class="text-3xl font-bold text-gray-900 mb-2">Featured Projects</h2>
-      <p class="text-gray-600">Open-source work and portfolio projects</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
-      {% for project in featured_projects %}
-      {% include project-card.html project=project %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-
-<section class="bg-blue-50 py-16">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-3xl font-bold mb-4 text-gray-900">Let's Connect</h2>
     <p class="text-xl mb-8 text-gray-600">
@@ -82,13 +110,13 @@ layout: default
     <div class="flex flex-wrap justify-center gap-4">
       {% if site.author.social.email %}
       <a href="mailto:{{ site.author.social.email }}"
-        class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+        class="px-8 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors">
         Get in Touch
       </a>
       {% endif %}
-      <a href="{{ '/about/' | relative_url }}"
-        class="px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
-        Learn More
+      <a href="{{ '/tools/' | relative_url }}"
+        class="px-8 py-3 bg-gray-200 text-gray-900 font-semibold rounded-lg hover:bg-gray-300 transition-colors">
+        View Tools
       </a>
     </div>
   </div>
