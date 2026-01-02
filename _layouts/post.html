@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+<article class="bg-white">
+
+  <header class="border-b">
+    <div class="max-w-3xl mx-auto px-6 py-12">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 leading-tight">{{ page.title }}</h1>
+
+      {% if page.description %}
+      <p class="text-xl text-gray-600 mb-8 leading-relaxed">{{ page.description }}</p>
+      {% endif %}
+
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <span>{{ page.author | default: site.author.name }}</span>
+        <span>•</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%b %d, %Y" }}
+        </time>
+        <span>•</span>
+        {% assign words = content | number_of_words %}
+        {% assign reading_time = words | divided_by: 200 %}
+        {% if reading_time == 0 %}{% assign reading_time = 1 %}{% endif %}
+        <span>{{ reading_time }} min read</span>
+      </div>
+    </div>
+  </header>
+
+
+  {% if page.cover_image %}
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <img src="{{ page.cover_image }}" alt="{{ page.title }}" class="w-full">
+  </div>
+  {% endif %}
+
+
+  <div class="max-w-3xl mx-auto px-6 py-8">
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+
+
+  {% if page.tags %}
+  <div class="max-w-3xl mx-auto px-6 py-8 border-t">
+    <div class="flex flex-wrap gap-2">
+      {% for tag in page.tags %}
+      <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors">
+        {{ tag }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+
+  <div class="max-w-3xl mx-auto px-6 py-8">
+    <a href="{{ '/posts/' | relative_url }}"
+      class="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+      <i data-lucide="arrow-left" class="w-4 h-4"></i>
+      <span>Back to all posts</span>
+    </a>
+  </div>
+</article>

@@ -1,0 +1,80 @@
+<!-- SEO Meta Tags -->
+{% if page.title %}
+<title>{{ page.title }} | {{ site.title }}</title>
+{% else %}
+<title>{{ site.title }} | {{ site.tagline }}</title>
+{% endif %}
+
+<!-- Meta Description -->
+{% if page.description %}
+<meta name="description" content="{{ page.description }}">
+{% elsif page.excerpt %}
+<meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
+{% else %}
+<meta name="description" content="{{ site.description }}">
+{% endif %}
+
+<!-- Canonical URL -->
+{% if page.canonical_url %}
+<link rel="canonical" href="{{ page.canonical_url }}">
+{% else %}
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+{% endif %}
+
+<!-- Author -->
+<meta name="author" content="{{ page.author | default: site.author.name }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description"
+  content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+{% if page.cover_image %}
+<meta property="og:image" content="{{ page.cover_image | absolute_url }}">
+{% elsif site.logo %}
+<meta property="og:image" content="{{ site.logo | absolute_url }}">
+{% endif %}
+<meta property="og:site_name" content="{{ site.title }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ page.url | absolute_url }}">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description"
+  content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+{% if page.cover_image %}
+<meta name="twitter:image" content="{{ page.cover_image | absolute_url }}">
+{% elsif site.logo %}
+<meta name="twitter:image" content="{{ site.logo | absolute_url }}">
+{% endif %}
+{% if site.author.social.twitter %}
+<meta name="twitter:creator" content="@{{ site.author.social.twitter }}">
+{% endif %}
+
+<!-- Article specific -->
+{% if page.layout == 'post' %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% if page.last_modified_at %}
+<meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">
+{% endif %}
+<meta property="article:author" content="{{ page.author | default: site.author.name }}">
+{% for category in page.categories %}
+<meta property="article:section" content="{{ category }}">
+{% endfor %}
+{% for tag in page.tags %}
+<meta property="article:tag" content="{{ tag }}">
+{% endfor %}
+{% endif %}
+
+<!-- Keywords -->
+{% if page.tags %}
+<meta name="keywords" content="{{ page.tags | join: ', ' }}">
+{% endif %}
+
+<!-- Robots -->
+{% if page.draft == true %}
+<meta name="robots" content="noindex, nofollow">
+{% else %}
+<meta name="robots" content="index, follow">
+{% endif %}

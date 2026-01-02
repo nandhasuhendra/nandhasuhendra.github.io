@@ -1,0 +1,90 @@
+# Site Settings
+title: Nanda Suhendra
+tagline: Backend Engineer | Ruby on Rails Developer
+description: >-
+  Personal website of Nanda Suhendra - Backend Engineer at Mekari specializing in
+  Ruby on Rails, APIs, and reliable backend systems. Articles on backend development,
+  testing, and infrastructure.
+url: "https://nandhasuhendra.github.io" # Change this to your GitHub Pages URL
+baseurl: "" # Leave empty for user/org pages, use "/blog" for project pages
+
+# Author Information
+author:
+  name: Nanda Suhendra
+  email: nandhasuhendra@gmail.com
+  bio: >-
+    Backend Engineer at Mekari building reliable applications with Ruby on Rails.
+    Passionate about backend systems, APIs, testing, and making deployments safer.
+    Currently learning distributed systems observability and SRE practices.
+  avatar: /assets/images/avatar.jpg
+  location: Indonesia
+  social:
+    github: nandhasuhendra
+    linkedin: sang-putu-nanda-suhendra
+    email: nandhasuhendra@gmail.com
+
+# Build Settings
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+timezone: Asia/Jakarta
+theme: null # Disable default theme
+
+# Collections
+collections:
+  projects:
+    output: false
+    permalink: /projects/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Nanda Suhendra"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Pagination
+paginate: 10
+paginate_path: "/posts/page:num/"
+
+# Plugins (GitHub Pages compatible only)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - README.md
+  - node_modules
+  - vendor
+
+# SEO
+logo: /assets/images/logo.png
+social:
+  name: Your Name
+  links:
+    - https://twitter.com/yourusername
+    - https://github.com/yourusername
+    - https://www.linkedin.com/in/yourprofile
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Reading Time (words per minute)
+words_per_minute: 200

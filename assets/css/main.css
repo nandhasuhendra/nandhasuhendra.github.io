@@ -1,0 +1,226 @@
+/* Light Theme - Medium Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+}
+
+/* Post Content Typography - Medium Style */
+.post-content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #1f2937;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.post-content h1 {
+  font-size: 2.25rem;
+}
+.post-content h2 {
+  font-size: 1.875rem;
+}
+.post-content h3 {
+  font-size: 1.5rem;
+}
+.post-content h4 {
+  font-size: 1.25rem;
+}
+
+.post-content p {
+  margin-bottom: 1.75rem;
+  line-height: 1.8;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1.75rem;
+  padding-left: 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+.post-content a {
+  color: #111827;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.post-content a:hover {
+  color: #3b82f6;
+}
+
+/* Code Blocks - Medium Style */
+.post-content code {
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  font-size: 0.875em;
+  padding: 0.2em 0.4em;
+  background: #f3f4f6;
+  border-radius: 0.25rem;
+  color: #1f2937;
+}
+
+.post-content pre {
+  padding: 1.25rem;
+  overflow-x: auto;
+  background: #1f2937;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+  line-height: 1.6;
+}
+
+.post-content pre code {
+  background: transparent;
+  padding: 0;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+/* Blockquotes - Medium Style */
+.post-content blockquote {
+  margin: 2rem 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 3px solid #111827;
+  font-style: italic;
+  color: #4b5563;
+  font-size: 1.125rem;
+}
+
+/* Images */
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* Horizontal Rule */
+.post-content hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 3rem 0;
+}
+
+/* Tables */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.post-content th,
+.post-content td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #e5e7eb;
+}
+
+.post-content th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+/* Strong and Em */
+.post-content strong {
+  font-weight: 600;
+  color: #111827;
+}
+
+.post-content em {
+  font-style: italic;
+}
+
+/* Bullet Lists - Add visible bullets */
+.post-content ul {
+  list-style-type: disc;
+}
+
+.post-content ol {
+  list-style-type: decimal;
+}
+
+.post-content ul ul {
+  list-style-type: circle;
+}
+
+.post-content ul ul ul {
+  list-style-type: square;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+/* Selection */
+::selection {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Utilities */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #eff6ff;
+  color: #1e40af;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}

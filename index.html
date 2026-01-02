@@ -1,0 +1,95 @@
+---
+layout: default
+---
+
+
+<section class="bg-white border-b">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+    <div class="text-center">
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 text-gray-900">
+        {{ site.title }}
+      </h1>
+
+      <p class="text-2xl mb-4 text-blue-600 font-semibold">
+        {{ site.tagline }}
+      </p>
+
+      <p class="text-xl mb-8 text-gray-600 max-w-2xl mx-auto">
+        {{ site.author.bio }}
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="{{ '/posts/' | relative_url }}"
+          class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+          Read Articles
+        </a>
+        <a href="{{ '/projects/' | relative_url }}"
+          class="px-8 py-3 bg-gray-200 text-gray-900 font-semibold rounded-lg hover:bg-gray-300 transition-colors">
+          View Projects
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-white py-16">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">Featured Articles</h2>
+      <p class="text-gray-600">Latest posts on backend development and engineering</p>
+    </div>
+
+    <div class="space-y-8">
+      {% assign all_posts = site.posts | where_exp: "post", "post.draft != true" | sort: "date" | reverse %}
+      {% for post in all_posts limit:5 %}
+      {% include post-card.html post=post %}
+      {% endfor %}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="{{ '/posts/' | relative_url }}" class="text-blue-600 font-semibold hover:underline">
+        View All Articles →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-gray-50 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-2">Featured Projects</h2>
+      <p class="text-gray-600">Open-source work and portfolio projects</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
+      {% for project in featured_projects %}
+      {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-blue-50 py-16">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-4 text-gray-900">Let's Connect</h2>
+    <p class="text-xl mb-8 text-gray-600">
+      Interested in collaboration or have a question? Feel free to reach out!
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      {% if site.author.social.email %}
+      <a href="mailto:{{ site.author.social.email }}"
+        class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+        Get in Touch
+      </a>
+      {% endif %}
+      <a href="{{ '/about/' | relative_url }}"
+        class="px-8 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+        Learn More
+      </a>
+    </div>
+  </div>
+</section>

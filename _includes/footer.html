@@ -1,0 +1,55 @@
+<footer class="bg-gray-900 dark:bg-gray-950 text-gray-300 border-t-4 border-blue-600 dark:border-blue-500">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- About Section -->
+      <div>
+        <h3 class="text-white text-lg font-bold mb-4">{{ site.title }}</h3>
+        <p class="text-sm">{{ site.tagline }}</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-white text-lg font-bold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="{{ '/' | relative_url }}" class="hover:text-blue-400 transition-colors">Home</a></li>
+          <li><a href="{{ '/posts/' | relative_url }}" class="hover:text-blue-400 transition-colors">Posts</a></li>
+          <li><a href="{{ '/projects/' | relative_url }}" class="hover:text-blue-400 transition-colors">Projects</a>
+          </li>
+          <li><a href="{{ '/about/' | relative_url }}" class="hover:text-blue-400 transition-colors">About</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Links -->
+      <div>
+        <h3 class="text-white text-lg font-bold mb-4">Connect</h3>
+        <div class="flex space-x-4">
+          {% if site.author.social.github %}
+          <a href="https://github.com/{{ site.author.social.github }}" target="_blank" rel="noopener noreferrer"
+            class="text-gray-300 hover:text-blue-400 transition-colors" aria-label="GitHub">
+            <i data-lucide="github" class="w-6 h-6"></i>
+          </a>
+          {% endif %}
+
+          {% if site.author.social.linkedin %}
+          <a href="https://linkedin.com/in/{{ site.author.social.linkedin }}" target="_blank" rel="noopener noreferrer"
+            class="text-gray-300 hover:text-blue-400 transition-colors" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-6 h-6"></i>
+          </a>
+          {% endif %}
+
+          {% if site.author.social.email %}
+          <a href="mailto:{{ site.author.social.email }}" class="text-gray-300 hover:text-blue-400 transition-colors"
+            aria-label="Email">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-8 pt-8 border-t border-gray-800 text-center text-sm">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

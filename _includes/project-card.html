@@ -1,0 +1,41 @@
+<article class="card h-full flex flex-col">
+  {% if include.project.image %}
+  <div class="mb-4 -mx-6 -mt-6">
+    <img src="{{ include.project.image | relative_url }}" alt="{{ include.project.title }}"
+      class="w-full h-48 object-cover rounded-t-lg">
+  </div>
+  {% endif %}
+
+  <h3 class="text-xl font-bold mb-2 text-gray-900">
+    {{ include.project.title }}
+  </h3>
+
+  <p class="text-gray-600 mb-4 flex-grow">
+    {{ include.project.description | truncate: 150 }}
+  </p>
+
+  {% if include.project.tech_stack %}
+  <div class="flex flex-wrap gap-2 mb-4">
+    {% for tech in include.project.tech_stack limit:4 %}
+    <span class="badge">{{ tech }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="flex gap-3 mt-auto">
+    {% if include.project.live_url %}
+    <a href="{{ include.project.live_url }}" target="_blank"
+      class="inline-flex items-center gap-1 px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg">
+      <span>View Live</span>
+      <i data-lucide="external-link" class="w-4 h-4"></i>
+    </a>
+    {% endif %}
+    {% if include.project.repo_url %}
+    <a href="{{ include.project.repo_url }}" target="_blank"
+      class="inline-flex items-center gap-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg">
+      <span>GitHub</span>
+      <i data-lucide="github" class="w-4 h-4"></i>
+    </a>
+    {% endif %}
+  </div>
+</article>

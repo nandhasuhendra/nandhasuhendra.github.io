@@ -1,0 +1,31 @@
+# Ignore Jekyll build outputs
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ignore Ruby/Bundler files
+vendor/
+.bundle/
+Gemfile.lock
+
+# Ignore macOS files
+.DS_Store
+
+# Ignore editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore environment files
+.env
+.env.local
+
+# Ignore log files
+*.log
+
+# Ignore backup files
+*.bak
+*.backup

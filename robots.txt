@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and utility pages
+Disallow: /assets/
+Disallow: /_site/
+
+# Sitemap
+Sitemap: {{ site.url }}/sitemap.xml

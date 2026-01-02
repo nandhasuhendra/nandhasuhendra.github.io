@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="bg-white">
+  <!-- Header -->
+  <header class="border-b">
+    <div class="max-w-3xl mx-auto px-6 py-12">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 leading-tight">{{ page.title }}</h1>
+      {% if page.description %}
+      <p class="text-xl text-gray-600 mb-8 leading-relaxed">{{ page.description }}</p>
+      {% endif %}
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="max-w-3xl mx-auto px-6 py-8">
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+</article>

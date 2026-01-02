@@ -1,0 +1,51 @@
+<header class="bg-white border-b sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+        <a href="{{ '/' | relative_url }}"
+          class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
+          {{ site.title }}
+        </a>
+      </div>
+
+      <div class="hidden md:flex md:items-center md:space-x-8">
+        <a href="{{ '/' | relative_url }}" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+          Home
+        </a>
+        <a href="{{ '/posts/' | relative_url }}"
+          class="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+          Posts
+        </a>
+        <a href="{{ '/projects/' | relative_url }}"
+          class="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+          Projects
+        </a>
+        <a href="{{ '/about/' | relative_url }}"
+          class="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+          About
+        </a>
+      </div>
+
+      <div class="md:hidden">
+        <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-gray-900 hover:text-blue-600"
+          aria-label="Toggle menu">
+          <i data-lucide="menu" x-show="!mobileMenuOpen" class="h-6 w-6"></i>
+          <i data-lucide="x" x-show="mobileMenuOpen" class="h-6 w-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <div x-show="mobileMenuOpen" x-collapse class="md:hidden border-t">
+      <div class="py-4 space-y-2">
+        <a href="{{ '/' | relative_url }}"
+          class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600">Home</a>
+        <a href="{{ '/posts/' | relative_url }}"
+          class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600">Posts</a>
+        <a href="{{ '/projects/' | relative_url }}"
+          class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600">Projects</a>
+        <a href="{{ '/about/' | relative_url }}"
+          class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600">About</a>
+      </div>
+    </div>
+  </nav>
+</header>

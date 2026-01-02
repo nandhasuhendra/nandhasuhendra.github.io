@@ -1,0 +1,94 @@
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  {% if page.layout == 'post' %}
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html | strip_newlines | truncate: 160 }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: site.author.name }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.logo | absolute_url }}"
+    }
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  {% if page.last_modified_at %}
+  "dateModified": "{{ page.last_modified_at | date_to_xmlschema }}",
+  {% else %}
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  {% endif %}
+  {% if page.cover_image %}
+  "image": "{{ page.cover_image | absolute_url }}",
+  {% endif %}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  }
+  {% elsif page.layout == 'project' %}
+  "@type": "SoftwareApplication",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "applicationCategory": "DeveloperApplication",
+  {% if page.repo_url %}
+  "codeRepository": "{{ page.repo_url }}",
+  {% endif %}
+  {% if page.live_url %}
+  "url": "{{ page.live_url }}",
+  {% endif %}
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}"
+  }
+  {% else %}
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}",
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "@id": "{{ site.url }}",
+    "url": "{{ site.url }}",
+    {% if site.author.avatar %}
+    "image": "{{ site.author.avatar | absolute_url }}",
+    {% endif %}
+    "sameAs": [
+      {% if site.author.social.github %}"https://github.com/{{ site.author.social.github }}"{% endif %}
+      {% if site.author.social.twitter %}, "https://twitter.com/{{ site.author.social.twitter }}"{% endif %}
+      {% if site.author.social.linkedin %}, "https://linkedin.com/in/{{ site.author.social.linkedin }}"{% endif %}
+    ]
+  }
+  {% endif %}
+}
+</script>
+
+{% if page.url == '/' %}
+<!-- Person Schema for Homepage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author.name }}",
+  "url": "{{ site.url }}",
+  "description": "{{ site.author.bio }}",
+  {% if site.author.avatar %}
+  "image": "{{ site.author.avatar | absolute_url }}",
+  {% endif %}
+  "jobTitle": "{{ site.tagline }}",
+  "sameAs": [
+    {% if site.author.social.github %}"https://github.com/{{ site.author.social.github }}"{% endif %}
+    {% if site.author.social.twitter %}, "https://twitter.com/{{ site.author.social.twitter }}"{% endif %}
+    {% if site.author.social.linkedin %}, "https://linkedin.com/in/{{ site.author.social.linkedin }}"{% endif %}
+  ]
+}
+</script>
+{% endif %}
