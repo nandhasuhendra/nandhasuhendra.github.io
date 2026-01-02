@@ -1,8 +1,8 @@
 ---
 title: "The Case of the Duplicated Jobs: A Tech Detective Story"
 description: "Debugging background job issue after added new oberserver gems"
-date: 2026-01-02
-last_modified_at: 2026-01-02
+date: 2025-10-13
+last_modified_at: 2025-10-13
 author: Nanda Suhendra
 categories:
   - General

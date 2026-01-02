@@ -1,8 +1,8 @@
 ---
 title: "My First Battle With Database Transactions in Go as a Ruby Developer"
 description: "Handling database transaction in Golang"
-date: 2025-12-01
-last_modified_at: 2025-12-01
+date: 2026-01-02
+last_modified_at: 2026-01-02
 author: Nanda Suhendra
 categories:
   - General
@@ -12,7 +12,7 @@ tags:
   - Design Pattern
 cover_image:
 canonical_url:
-draft: true
+draft: false
 ---
 
 As a Ruby developer, database transaction in Rails feels almost effortless: wrap some code in a `transaction` block, and Rails handles everything automatically.
