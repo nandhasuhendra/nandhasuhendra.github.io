@@ -5,65 +5,99 @@ description: Articles about backend development, Ruby on Rails, APIs, and testin
 ---
 
 <section class="py-12">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <header class="mb-12">
-      <h1 class="text-4xl font-bold mb-4 text-gray-900">Blog Posts</h1>
-      <p class="text-xl text-gray-600 mb-8">
-        Insights, tutorials, and articles on backend development and engineering
-      </p>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+      <!-- Left Sidebar - Tags -->
+      <aside class="lg:w-64 flex-shrink-0">
+        <div class="sticky top-8">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-gray-900">Tags</h2>
+            <button onclick="clearAllTags()" id="clear-tags-btn"
+              class="px-3 py-1.5 rounded-full text-sm font-medium bg-gray-300 text-gray-900 hover:bg-gray-200 transition-colors">
+              Clear All
+            </button>
+          </div>
 
-      <!-- Search Box -->
-      <div class="relative">
-        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
+          <div id="tags-container" class="flex flex-wrap gap-2">
+            {% assign all_tags = site.posts | where_exp: "post", "post.draft != true" | map: "tags" | join: "," | split:
+            "," | uniq | sort %}
+
+            {% for tag in all_tags %}
+            {% if tag != "" %}
+            <button onclick="toggleTag('{{ tag | downcase }}')"
+              class="tag-filter px-3 py-1.5 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+              data-tag="{{ tag | downcase }}">
+              {{ tag }}
+            </button>
+            {% endif %}
+            {% endfor %}
+          </div>
         </div>
-        <input type="text" id="search-input" placeholder="Search posts by title or category..."
-          class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent outline-none" />
-      </div>
-    </header>
+      </aside>
 
-    <div id="posts-container" class="space-y-6">
-      {% assign published_posts = site.posts | where_exp: "post", "post.draft != true" | sort: "date" | reverse %}
-      {% for post in published_posts %}
-      <div class="post-item" data-title="{{ post.title | downcase }}"
-        data-categories="{% if post.categories %}{{ post.categories | join: ',' | downcase }}{% endif %}"
-        data-tags="{% if post.tags %}{{ post.tags | join: ',' | downcase }}{% endif %}">
-        {% include post-card.html post=post %}
-      </div>
-      {% else %}
-      <div class="text-center py-12">
-        <p class="text-xl text-gray-500">No posts published yet. Check back soon!</p>
-      </div>
-      {% endfor %}
-    </div>
+      <!-- Main Content -->
+      <div class="flex-1 min-w-0">
+        <header class="mb-12">
+          <h1 class="text-4xl font-bold mb-4 text-gray-900">Blog Posts</h1>
+          <p class="text-xl text-gray-600 mb-8">
+            Insights, tutorials, and articles on backend development and engineering
+          </p>
 
-    <!-- No results message -->
-    <div id="no-results" class="hidden text-center py-12">
-      <i data-lucide="search-x" class="w-16 h-16 mx-auto mb-4 text-gray-400"></i>
-      <p class="text-xl text-gray-500">No posts found matching your search.</p>
-      <button onclick="document.getElementById('search-input').value='';searchPosts();showPage(1);"
-        class="mt-4 text-gray-900 hover:underline">
-        Clear search
-      </button>
-    </div>
+          <!-- Search Box -->
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
+            </div>
+            <input type="text" id="search-input" placeholder="Search posts by title or category..."
+              class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent outline-none" />
+          </div>
+        </header>
 
-    <!-- Pagination -->
-    <div id="pagination" class="mt-12">
-      <!-- Pagination controls -->
-      <div class="flex justify-center items-center gap-2">
-        <button id="prev-btn" onclick="changePage(-1)"
-          class="inline-flex items-center gap-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium">
-          <i data-lucide="chevron-left" class="w-4 h-4"></i>
-          <span>Previous</span>
-        </button>
+        <div id="posts-container" class="space-y-6">
+          {% assign published_posts = site.posts | where_exp: "post", "post.draft != true" | sort: "date" | reverse %}
+          {% for post in published_posts %}
+          <div class="post-item" data-title="{{ post.title | downcase }}"
+            data-categories="{% if post.categories %}{{ post.categories | join: ',' | downcase }}{% endif %}"
+            data-tags="{% if post.tags %}{{ post.tags | join: ',' | downcase }}{% endif %}">
+            {% include post-card.html post=post %}
+          </div>
+          {% else %}
+          <div class="text-center py-12">
+            <p class="text-xl text-gray-500">No posts published yet. Check back soon!</p>
+          </div>
+          {% endfor %}
+        </div>
 
-        <div id="page-numbers" class="flex gap-2"></div>
+        <!-- No results message -->
+        <div id="no-results" class="hidden text-center py-12">
+          <i data-lucide="search-x" class="w-16 h-16 mx-auto mb-4 text-gray-400"></i>
+          <p class="text-xl text-gray-500">No posts found matching your search.</p>
+          <button
+            onclick="document.getElementById('search-input').value='';activeTags=[];searchPosts();showPage(1);updateTagButtons();"
+            class="mt-4 text-gray-900 hover:underline">
+            Clear search
+          </button>
+        </div>
 
-        <button id="next-btn" onclick="changePage(1)"
-          class="inline-flex items-center gap-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium">
-          <span>Next</span>
-          <i data-lucide="chevron-right" class="w-4 h-4"></i>
-        </button>
+        <!-- Pagination -->
+        <div id="pagination" class="mt-12">
+          <!-- Pagination controls -->
+          <div class="flex justify-center items-center gap-2">
+            <button id="prev-btn" onclick="changePage(-1)"
+              class="inline-flex items-center gap-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium">
+              <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              <span>Previous</span>
+            </button>
+
+            <div id="page-numbers" class="flex gap-2"></div>
+
+            <button id="next-btn" onclick="changePage(1)"
+              class="inline-flex items-center gap-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium">
+              <span>Next</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -73,6 +107,49 @@ description: Articles about backend development, Ruby on Rails, APIs, and testin
   const POSTS_PER_PAGE = 10;
   let currentPage = 1;
   let filteredPosts = [];
+  let activeTags = [];
+
+  function toggleTag(tag) {
+    const index = activeTags.indexOf(tag);
+    if (index > -1) {
+      activeTags.splice(index, 1);
+    } else {
+      activeTags.push(tag);
+    }
+    searchPosts();
+    updateTagButtons();
+  }
+
+  function clearAllTags() {
+    activeTags = [];
+    const searchInput = document.getElementById('search-input');
+    searchInput.value = '';
+    searchPosts();
+    updateTagButtons();
+  }
+
+  function updateTagButtons() {
+    const tagButtons = document.querySelectorAll('.tag-filter');
+    const clearBtn = document.getElementById('clear-tags-btn');
+
+    tagButtons.forEach(btn => {
+      const btnTag = btn.dataset.tag || '';
+      if (activeTags.includes(btnTag)) {
+        btn.classList.add('bg-gray-900', 'text-white');
+        btn.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+      } else {
+        btn.classList.remove('bg-gray-900', 'text-white');
+        btn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+      }
+    });
+
+    // Show/hide clear button based on active state
+    if (activeTags.length > 0) {
+      clearBtn.classList.remove('hidden');
+    } else {
+      clearBtn.classList.add('hidden');
+    }
+  }
 
   function searchPosts() {
     const searchInput = document.getElementById('search-input');
@@ -85,14 +162,24 @@ description: Articles about backend development, Ruby on Rails, APIs, and testin
       const categories = item.dataset.categories || '';
       const tags = item.dataset.tags || '';
       const searchText = `${title} ${categories} ${tags}`;
-      return searchTerm === '' || searchText.includes(searchTerm);
+
+      // Apply tag filter - match if ANY of the active tags are present
+      let matchesTag = activeTags.length === 0;
+      if (activeTags.length > 0) {
+        matchesTag = activeTags.some(activeTag => tags.includes(activeTag));
+      }
+
+      // Apply search filter
+      const matchesSearch = searchTerm === '' || searchText.includes(searchTerm);
+
+      return matchesTag && matchesSearch;
     });
 
     currentPage = 1;
     displayPosts();
 
     // Show/hide no results message
-    if (filteredPosts.length === 0 && searchTerm !== '') {
+    if (filteredPosts.length === 0 && (searchTerm !== '' || activeTags.length > 0)) {
       noResults.classList.remove('hidden');
       document.getElementById('pagination').classList.add('hidden');
     } else {
@@ -117,9 +204,6 @@ description: Articles about backend development, Ruby on Rails, APIs, and testin
     });
 
     updatePagination();
-
-    // Scroll to top of posts
-    document.getElementById('posts-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function updatePagination() {
@@ -223,6 +307,9 @@ description: Articles about backend development, Ruby on Rails, APIs, and testin
 
     // Initialize pagination
     displayPosts();
+
+    // Initialize tag buttons
+    updateTagButtons();
 
     // Initialize Lucide icons
     if (typeof lucide !== 'undefined') {

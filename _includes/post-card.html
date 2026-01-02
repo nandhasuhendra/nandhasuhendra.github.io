@@ -16,11 +16,29 @@
         {% assign reading_time = words | divided_by: 200 %}
         {% if reading_time == 0 %}{% assign reading_time = 1 %}{% endif %}
         <span>{{ reading_time }} min read</span>
+      </div>
 
-        {% if include.post.tags %}
-        <span class="badge">{{ include.post.tags | first }}</span>
+      {% if include.post.tags %}
+      <div class="flex items-center gap-2 mt-3 flex-wrap">
+        {% assign tag_count = include.post.tags | size %}
+        {% if tag_count > 2 %}
+        {% for tag in include.post.tags limit:2 %}
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+          {{ tag }}
+        </span>
+        {% endfor %}
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-900 text-white">
+          +{{ tag_count | minus: 2 }}
+        </span>
+        {% else %}
+        {% for tag in include.post.tags %}
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+          {{ tag }}
+        </span>
+        {% endfor %}
         {% endif %}
       </div>
+      {% endif %}
     </div>
 
     {% if include.post.cover_image %}
