@@ -13,27 +13,14 @@ description: Open-source projects and portfolio work
       </p>
     </header>
 
-    {% assign featured = site.projects | where: "featured", true %}
-    {% if featured.size > 0 %}
-    <div class="mb-12">
-      <h2 class="text-2xl font-bold mb-6 text-gray-900">Featured Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {% for project in featured %}
-          {% include project-card.html project=project %}
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
-
     <div>
-      <h2 class="text-2xl font-bold mb-6 text-gray-900">All Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {% for project in site.projects %}
-          {% include project-card.html project=project %}
+        {% include project-card.html project=project %}
         {% else %}
-          <div class="col-span-full text-center py-12">
-            <p class="text-xl text-gray-500">No projects available yet. Check back soon!</p>
-          </div>
+        <div class="col-span-full text-center py-12">
+          <p class="text-xl text-gray-500">No projects available yet. Check back soon!</p>
+        </div>
         {% endfor %}
       </div>
     </div>
