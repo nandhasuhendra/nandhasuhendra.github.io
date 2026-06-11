@@ -76,13 +76,14 @@ exclude:
   - vendor
 
 # SEO
-logo: /assets/images/logo.png
+logo: /assets/favicons/favicon-512.png
 social:
-  name: Your Name
+  name: Nanda Suhendra
   links:
-    - https://twitter.com/yourusername
-    - https://github.com/yourusername
-    - https://www.linkedin.com/in/yourprofile
+    - https://github.com/nandhasuhendra
+    - https://linkedin.com/in/sang-putu-nanda-suhendra
+    - https://www.threads.com/@nandha_suhendra
+    - https://instagram.com/nandha_suhendra
 
 # Google Analytics (optional)
 # google_analytics: UA-XXXXXXXXX-X

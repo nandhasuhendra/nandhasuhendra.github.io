@@ -7,6 +7,7 @@ tech_stack:
   - Tailwind CSS
   - Hotwire
   - Docker
+image: /assets/images/projects/qwikidata.jpg
 live_url: https://qwikidata.firegent.com/
 status: Active
 featured: true

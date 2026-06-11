@@ -7,6 +7,7 @@ tech_stack:
   - Lucide Icons
   - GitHub Pages
   - highlight.js
+image: /assets/images/projects/portfolio-website.jpg
 live_url: https://nandhasuhendra.github.io/
 status: Active
 featured: true
