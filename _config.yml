@@ -85,8 +85,8 @@ social:
     - https://www.threads.com/@nandha_suhendra
     - https://instagram.com/nandha_suhendra
 
-# Google Analytics (optional)
-# google_analytics: UA-XXXXXXXXX-X
+# Google Analytics 4
+google_analytics: G-7Y3EV40V4Z
 
 # Reading Time (words per minute)
 words_per_minute: 200
