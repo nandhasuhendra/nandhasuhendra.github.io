@@ -2,7 +2,7 @@
 title: Nanda Suhendra
 tagline: Backend Engineer | Ruby on Rails Developer
 description: >-
-  Personal website of Nanda Suhendra - Backend Engineer at Mekari specializing in
+  Personal website of Nanda Suhendra - Backend Engineer at Dropsuite specializing in
   Ruby on Rails, APIs, and reliable backend systems. Articles on backend development,
   testing, and infrastructure.
 url: "https://nandhasuhendra.github.io" # Change this to your GitHub Pages URL
@@ -13,14 +13,15 @@ author:
   name: Nanda Suhendra
   email: nandhasuhendra@gmail.com
   bio: >-
-    Backend Engineer at Mekari building reliable applications with Ruby on Rails.
-    Passionate about backend systems, APIs, testing, and making deployments safer.
-    Currently learning distributed systems observability and SRE practices.
+    Backend Engineer at Dropsuite. I build reliable backend applications with Ruby on Rails
+    and enjoy making systems easier to operate and test. Focused on APIs, test coverage,
+    CI/CD, and mentoring on pragmatic engineering solutions.
   avatar: /assets/images/hero/avatar.jpeg
   location: Indonesia
   social:
     github: nandhasuhendra
     linkedin: sang-putu-nanda-suhendra
+    instagram: nandha_suhendra
     email: nandhasuhendra@gmail.com
 
 # Build Settings
