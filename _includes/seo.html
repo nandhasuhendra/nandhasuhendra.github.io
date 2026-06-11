@@ -10,7 +10,7 @@
 {% capture _url %}{{ page.url | replace:'index.html','' | absolute_url }}{% endcapture %}
 {% if page.cover_image %}{% capture _og_image %}{{ page.cover_image | absolute_url }}{% endcapture %}
 {% elsif page.image %}{% capture _og_image %}{{ page.image | absolute_url }}{% endcapture %}
-{% elsif site.author.avatar %}{% capture _og_image %}{{ site.author.avatar | absolute_url }}{% endcapture %}
+{% elsif page.layout != 'post' and site.author.avatar %}{% capture _og_image %}{{ site.author.avatar | absolute_url }}{% endcapture %}
 {% endif %}
 
 <meta name="description" content="{{ _desc | strip_newlines | escape }}">
