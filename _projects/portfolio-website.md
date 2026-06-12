@@ -19,9 +19,9 @@ A personal website that doubles as a technical blog. Built with Jekyll for stati
 
 ## Key Features
 
-- **Blog**: Posts on backend development, Ruby on Rails architecture, and cross-language engineering
+- **Blog**: Posts on software engineering, Ruby on Rails architecture, and cross-language engineering
 - **Projects**: Showcase of personal and professional work
-- **Tools**: A curated list of tools and services used daily for backend development
+- **Tools**: A curated list of tools and services used daily for software development
 - **SEO**: Full OpenGraph, JSON-LD structured data, sitemap, and RSS feed support
 
 ## Tech Highlights

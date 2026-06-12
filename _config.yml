@@ -1,9 +1,9 @@
 # Site Settings
 title: Nanda Suhendra
-tagline: Backend Engineer | Ruby on Rails Developer
+tagline: Software Engineer | Ruby on Rails Developer
 description: >-
-  Personal website of Nanda Suhendra - Backend Engineer at Dropsuite specializing in
-  Ruby on Rails, APIs, and reliable backend systems. Articles on backend development,
+  Personal website of Nanda Suhendra - Software Engineer at Dropsuite specializing in
+  Ruby on Rails, APIs, and reliable systems. Articles on software engineering,
   testing, and infrastructure.
 url: "https://nandhasuhendra.github.io" # Change this to your GitHub Pages URL
 baseurl: "" # Leave empty for user/org pages, use "/blog" for project pages
@@ -13,7 +13,7 @@ author:
   name: Nanda Suhendra
   email: nandhasuhendra@gmail.com
   bio: >-
-    Backend Engineer at Dropsuite. I build reliable backend applications with Ruby on Rails
+    Software Engineer at Dropsuite. I build reliable applications with Ruby on Rails
     and enjoy making systems easier to operate and test. Focused on APIs, test coverage,
     CI/CD, and mentoring on pragmatic engineering solutions.
   avatar: /assets/images/hero/avatar.jpeg
