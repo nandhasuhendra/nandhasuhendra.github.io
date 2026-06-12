@@ -1,10 +1,10 @@
 # Site Settings
 title: Nanda Suhendra
-tagline: Software Engineer | Ruby on Rails Developer
+tagline: Software Engineer · Turning coffee into working code since 2019
 description: >-
-  Personal website of Nanda Suhendra - Software Engineer at Dropsuite specializing in
-  Ruby on Rails, APIs, and reliable systems. Articles on software engineering,
-  testing, and infrastructure.
+  Personal website of Nanda Suhendra — Software Engineer who loves building things that
+  actually work in production. Writing about real-world engineering, Ruby on Rails, Go,
+  and the lessons learned the hard way.
 url: "https://nandhasuhendra.github.io" # Change this to your GitHub Pages URL
 baseurl: "" # Leave empty for user/org pages, use "/blog" for project pages
 
@@ -13,9 +13,10 @@ author:
   name: Nanda Suhendra
   email: nandhasuhendra@gmail.com
   bio: >-
-    Software Engineer at Dropsuite. I build reliable applications with Ruby on Rails
-    and enjoy making systems easier to operate and test. Focused on APIs, test coverage,
-    CI/CD, and mentoring on pragmatic engineering solutions.
+    Software Engineer at Dropsuite by day, bug hunter by night. I spend most of my time
+    building reliable systems with Ruby on Rails and Go, obsessing over clean APIs, and
+    occasionally winning arguments with the debugger. When I'm not shipping features,
+    I'm writing about the things I wish someone had told me earlier.
   avatar: /assets/images/hero/avatar.jpeg
   location: Indonesia
   social:
