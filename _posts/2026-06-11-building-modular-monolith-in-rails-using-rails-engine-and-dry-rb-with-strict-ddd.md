@@ -1,6 +1,6 @@
 ---
-title: "Building a Modular Monolith in Rails Using Rails Engine and Dry-rb with Strict DDD"
-description: "How I structured a production Rails app into isolated domain engines with Dry-rb dependency injection, typed entities, and Result monads without reaching for microservices."
+title: "Modular Monolith in Rails: Rails Engine, Dry-rb, and DDD in Practice"
+description: "How I structured a production Rails app into isolated domain engines using Rails Engine and Dry-rb — without the complexity and overhead of microservices."
 date: 2026-06-11
 last_modified_at: 2026-06-11
 author: Nanda Suhendra

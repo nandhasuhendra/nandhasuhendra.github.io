@@ -1,6 +1,6 @@
 ---
-title: "My First Battle With Database Transactions in Go as a Ruby Developer"
-description: "Handling database transaction in Golang"
+title: "Handling Database Transactions in Go: A Ruby Developer's Guide"
+description: "Coming from Ruby on Rails? Here's how database transactions work in Go — from basic commits and rollbacks to handling panics and nested transactions the Go way."
 date: 2026-01-02
 last_modified_at: 2026-01-02
 author: Nanda Suhendra

@@ -1,6 +1,6 @@
 ---
-title: "The Case of the Duplicated Jobs: A Tech Detective Story"
-description: "Debugging background job issue after added new oberserver gems"
+title: "How We Fixed Duplicated Sidekiq Jobs Caused by OpenTelemetry"
+description: "Our Sidekiq jobs started running twice after enabling OpenTelemetry. Here's how we tracked down the root cause — a silent conflict with ConcurrentRuby — and fixed it for good."
 date: 2025-10-13
 last_modified_at: 2025-10-13
 author: Nanda Suhendra

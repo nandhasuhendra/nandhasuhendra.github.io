@@ -1,6 +1,6 @@
 ---
-title: "From Ruby to Go: Debugging Challenges and How I Overcome Them"
-description: "Ruby engineer tried to debugging Golang code using Delve"
+title: "From Ruby to Go: How I Learned to Debug Golang as a Rails Developer"
+description: "Switching from Ruby to Go? Here's how to debug Go code using Delve and fmt — plus the mindset shift that made it finally click for a Rails developer."
 date: 2025-01-14
 last_modified_at: 2025-01-14
 author: Nandha Suhendra
