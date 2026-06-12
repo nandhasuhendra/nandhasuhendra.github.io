@@ -1,8 +1,8 @@
 ---
 title: "How I Built My Personal Blog with Jekyll and Let AI Do the Heavy Lifting"
 description: "A software engineer's journey of building a personal blog with Jekyll, Tailwind CSS, and GitHub Pages — with a little help from Claude AI."
-date: 2026-06-12
-last_modified_at: 2026-06-12
+date: 2025-12-15
+last_modified_at: 2025-12-15
 author: Nanda Suhendra
 categories:
   - General
