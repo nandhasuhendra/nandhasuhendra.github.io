@@ -212,6 +212,8 @@ But if you are building something where different parts of the business have the
 
 Using Rails Engines for structure, Dry-rb for typed boundaries and explicit dependencies, and Monads for predictable error handling gives you a codebase where you can focus on one domain at a time without worrying about what you might accidentally break somewhere else. That is a real win when things get complex.
 
+Domain boundaries are only half of it, though. The same app also has to serve a public marketing site, a staff admin panel, and the actual customer workspace without any of those bleeding into each other. I cover that split in [One Rails Backend, Three Apps]({% post_url 2026-07-19-splitting-web-admin-and-internal-apps-in-one-rails-backend %}).
+
 ---
 
 What has your experience been with large Rails apps? Have you tried Engines before, or do you use a different approach to manage growth? I would love to hear about it in the comments.
