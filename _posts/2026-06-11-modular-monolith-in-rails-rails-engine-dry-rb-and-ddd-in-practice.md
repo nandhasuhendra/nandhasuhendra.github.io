@@ -22,7 +22,7 @@ The first idea that came to mind was "let's break this into microservices." But 
 
 The answer was a **Modular Monolith**. It is still one deployed application, but with clear domain boundaries that are enforced by Rails Engines and Dry-rb's dependency injection tools.
 
-This is part 1 of a two-part series. Here I cover how the domains are structured and the DDD building blocks inside each one. Part 2 covers how those domains talk to each other and what I learned running this in production.
+This is part 1 of a two-part series. Here I cover how the domains are structured and the DDD building blocks inside each one. [Part 2]({% post_url 2026-06-12-modular-monolith-in-rails-cross-domain-communication-and-lessons-learned %}) covers how those domains talk to each other and what I learned running this in production.
 
 ---
 
