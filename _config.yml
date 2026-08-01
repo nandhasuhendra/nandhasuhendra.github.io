@@ -12,13 +12,16 @@ baseurl: "" # Leave empty for user/org pages, use "/blog" for project pages
 author:
   name: Nanda Suhendra
   email: nandhasuhendra@gmail.com
-  bio: >-
-    Just someone who really loves writing code and still can't quite believe he gets paid
-    for it. I work as a Software Engineer at Dropsuite, mostly tinkering with Ruby on
-    Rails and Go, and I'm still learning something new (often the hard way) almost every
-    day. I write here mostly so future me remembers what past me figured out, and maybe
-    it helps you too. Outside of code, I'm a husband who loves going on little adventures
-    with his lovely wife.
+  bio:
+    - >-
+      Just someone who really loves writing code and still can't quite believe he gets paid
+      for it. I work as a Software Engineer at Dropsuite, mostly tinkering with Ruby on
+      Rails and Go, and I'm still learning something new (often the hard way) almost every
+      day.
+    - >-
+      I write here mostly so future me remembers what past me figured out, and maybe
+      it helps you too. Outside of code, I'm a husband who loves going on little adventures
+      with his lovely wife.
   avatar: /assets/images/hero/avatar.jpeg
   location: Indonesia
   social:

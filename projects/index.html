@@ -4,11 +4,11 @@ title: Projects
 description: Open-source projects and portfolio work
 ---
 
-<section class="bg-gray-50 py-12">
+<section class="bg-gray-50 dark:bg-gray-950 py-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <header class="mb-12">
-      <h1 class="text-4xl font-bold mb-4 text-gray-900">Projects</h1>
-      <p class="text-xl text-gray-600">
+      <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Projects</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400">
         A collection of my open-source work and portfolio projects
       </p>
     </header>
@@ -19,7 +19,7 @@ description: Open-source projects and portfolio work
         {% include project-card.html project=project %}
         {% else %}
         <div class="col-span-full text-center py-12">
-          <p class="text-xl text-gray-500">No projects available yet. Check back soon!</p>
+          <p class="text-xl text-gray-500 dark:text-gray-400">No projects available yet. Check back soon!</p>
         </div>
         {% endfor %}
       </div>

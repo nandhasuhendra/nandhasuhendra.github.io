@@ -81,7 +81,7 @@
   "@id": {{ site.url | jsonify }},
   "name": {{ site.author.name | jsonify }},
   "url": {{ site.url | jsonify }},
-  "description": {{ site.author.bio | jsonify }},
+  "description": {{ site.author.bio | join: " " | jsonify }},
   "jobTitle": "Software Engineer",
   "worksFor": {
     "@type": "Organization",
