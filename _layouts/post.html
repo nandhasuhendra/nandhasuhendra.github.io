@@ -2,17 +2,17 @@
 layout: default
 ---
 
-<article class="bg-white">
+<article class="bg-white dark:bg-gray-900">
 
-  <header class="border-b">
+  <header class="border-b dark:border-gray-800">
     <div class="max-w-3xl mx-auto px-6 py-12">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 leading-tight">{{ page.title }}</h1>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">{{ page.title }}</h1>
 
       {% if page.description %}
-      <p class="text-xl text-gray-600 mb-8 leading-relaxed">{{ page.description }}</p>
+      <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">{{ page.description }}</p>
       {% endif %}
 
-      <div class="flex items-center gap-4 text-sm text-gray-500">
+      <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
         <span>{{ page.author | default: site.author.name }}</span>
         <span>•</span>
         <time datetime="{{ page.date | date_to_xmlschema }}">
@@ -43,10 +43,10 @@ layout: default
 
 
   {% if page.tags %}
-  <div class="max-w-3xl mx-auto px-6 py-8 border-t">
+  <div class="max-w-3xl mx-auto px-6 py-8 border-t dark:border-gray-800">
     <div class="flex flex-wrap gap-2">
       {% for tag in page.tags %}
-      <a href="#" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors">
+      <a href="#" class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
         {{ tag }}
       </a>
       {% endfor %}
@@ -57,14 +57,14 @@ layout: default
 
   {% capture _post_url %}{{ page.url | absolute_url }}{% endcapture %}
   {% capture _post_title %}{{ page.title | url_encode }}{% endcapture %}
-  <div class="max-w-3xl mx-auto px-6 py-8 border-t">
-    <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Share this post</p>
+  <div class="max-w-3xl mx-auto px-6 py-8 border-t dark:border-gray-800">
+    <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4">Share this post</p>
     <div class="flex flex-wrap gap-3">
 
       <!-- Copy link -->
       <button onclick="copyPostLink(this)"
         data-url="{{ _post_url }}"
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm font-medium hover:bg-gray-200 transition-colors">
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
         <i data-lucide="link" class="w-4 h-4"></i>
         <span>Copy link</span>
       </button>
@@ -118,9 +118,9 @@ layout: default
   </script>
 
 
-  <div class="max-w-3xl mx-auto px-6 py-8 border-t">
+  <div class="max-w-3xl mx-auto px-6 py-8 border-t dark:border-gray-800">
     <a href="{{ '/posts/' | relative_url }}"
-      class="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+      class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
       <i data-lucide="arrow-left" class="w-4 h-4"></i>
       <span>Back to all posts</span>
     </a>

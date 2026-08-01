@@ -1,4 +1,4 @@
-/* Light Theme - Medium Style */
+/* Light/Dark Theme - Medium Style */
 * {
   margin: 0;
   padding: 0;
@@ -18,11 +18,19 @@ body {
   color: #1f2937;
 }
 
+html.dark body {
+  color: #e5e7eb;
+}
+
 /* Post Content Typography - Medium Style */
 .post-content {
   font-size: 1.125rem;
   line-height: 1.8;
   color: #1f2937;
+}
+
+html.dark .post-content {
+  color: #e5e7eb;
 }
 
 .post-content h1,
@@ -37,6 +45,15 @@ body {
   margin-bottom: 1rem;
   color: #111827;
   letter-spacing: -0.02em;
+}
+
+html.dark .post-content h1,
+html.dark .post-content h2,
+html.dark .post-content h3,
+html.dark .post-content h4,
+html.dark .post-content h5,
+html.dark .post-content h6 {
+  color: #f9fafb;
 }
 
 .post-content h1 {
@@ -75,6 +92,10 @@ body {
   transition: color 0.2s;
 }
 
+html.dark .post-content a {
+  color: #f9fafb;
+}
+
 .post-content a:hover {
   color: #3b82f6;
 }
@@ -87,6 +108,11 @@ body {
   background: #f3f4f6;
   border-radius: 0.25rem;
   color: #1f2937;
+}
+
+html.dark .post-content code:not(pre code) {
+  background: #292524;
+  color: #e5e7eb;
 }
 
 .post-content pre {
@@ -122,6 +148,11 @@ body {
   font-size: 1.125rem;
 }
 
+html.dark .post-content blockquote {
+  border-left-color: #e5e7eb;
+  color: #9ca3af;
+}
+
 /* Images */
 .post-content img {
   max-width: 100%;
@@ -135,6 +166,10 @@ body {
   border: none;
   border-top: 1px solid #e5e7eb;
   margin: 3rem 0;
+}
+
+html.dark .post-content hr {
+  border-top-color: #374151;
 }
 
 /* Tables */
@@ -152,15 +187,28 @@ body {
   border: 1px solid #e5e7eb;
 }
 
+html.dark .post-content th,
+html.dark .post-content td {
+  border-color: #374151;
+}
+
 .post-content th {
   background: #f9fafb;
   font-weight: 600;
+}
+
+html.dark .post-content th {
+  background: #1f2937;
 }
 
 /* Strong and Em */
 .post-content strong {
   font-weight: 600;
   color: #111827;
+}
+
+html.dark .post-content strong {
+  color: #f9fafb;
 }
 
 .post-content em {
@@ -190,6 +238,11 @@ body {
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   padding: 1.5rem;
+}
+
+html.dark .card {
+  background: rgba(31, 41, 55, 0.5);
+  border-color: #1f2937;
 }
 
 /* Selection */
@@ -223,6 +276,11 @@ body {
   border-radius: 1rem;
   font-size: 0.875rem;
   font-weight: 500;
+}
+
+html.dark .badge {
+  background: rgba(30, 64, 175, 0.2);
+  color: #93c5fd;
 }
 
 /* Responsive */

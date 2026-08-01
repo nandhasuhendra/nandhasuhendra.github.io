@@ -1,21 +1,21 @@
 <article class="card h-full flex flex-col overflow-hidden">
   {% if include.project.image %}
-  <div class="w-full h-48 bg-gray-100 overflow-hidden">
+  <div class="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
     <img src="{{ include.project.image | relative_url }}" alt="{{ include.project.title }}"
       class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
   </div>
   {% else %}
-  <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-    <i data-lucide="folder" class="w-16 h-16 text-gray-400"></i>
+  <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
+    <i data-lucide="folder" class="w-16 h-16 text-gray-400 dark:text-gray-500"></i>
   </div>
   {% endif %}
 
   <div class="p-6 flex flex-col flex-grow">
-    <h3 class="text-xl font-bold mb-2 text-gray-900">
+    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">
       {{ include.project.title }}
     </h3>
 
-    <p class="text-gray-600 mb-4 flex-grow">
+    <p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
       {{ include.project.description | truncate: 150 }}
     </p>
 
@@ -30,14 +30,14 @@
     <div class="flex gap-3 mt-auto">
       {% if include.project.live_url %}
       <a href="{{ include.project.live_url }}" target="_blank"
-        class="inline-flex items-center gap-1 px-4 py-2 bg-gray-100 text-gray-900 text-sm font-semibold rounded-lg hover:bg-gray-200">
+        class="inline-flex items-center gap-1 px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white text-sm font-semibold rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
         <span>View Live</span>
         <i data-lucide="external-link" class="w-4 h-4"></i>
       </a>
       {% endif %}
       {% if include.project.repo_url %}
       <a href="{{ include.project.repo_url }}" target="_blank"
-        class="inline-flex items-center gap-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800">
+        class="inline-flex items-center gap-1 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600">
         <span>GitHub</span>
         <i data-lucide="github" class="w-4 h-4"></i>
       </a>

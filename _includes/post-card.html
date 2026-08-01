@@ -1,15 +1,15 @@
-<article class="border rounded-lg p-6 bg-white">
+<article class="border dark:border-white/10 rounded-lg p-6 bg-white dark:bg-white/5">
   <a href="{{ include.post.url | relative_url }}" class="flex gap-8 items-start hover:opacity-80 transition-opacity">
     <div class="flex-1">
-      <h2 class="text-2xl font-bold mb-2 text-gray-900">
+      <h2 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
         {{ include.post.title }}
       </h2>
 
-      <p class="text-gray-600 mb-4 line-clamp-2">
+      <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
         {{ include.post.description | default: include.post.excerpt | strip_html | truncate: 150 }}
       </p>
 
-      <div class="flex items-center gap-4 text-sm text-gray-500">
+      <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
         <time>{{ include.post.date | date: "%b %d, %Y" }}</time>
 
         {% assign words = include.post.content | number_of_words %}
@@ -23,16 +23,16 @@
         {% assign tag_count = include.post.tags | size %}
         {% if tag_count > 2 %}
         {% for tag in include.post.tags limit:2 %}
-        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
           {{ tag }}
         </span>
         {% endfor %}
-        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-900 text-white">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-900 dark:bg-gray-600 text-white">
           +{{ tag_count | minus: 2 }}
         </span>
         {% else %}
         {% for tag in include.post.tags %}
-        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
           {{ tag }}
         </span>
         {% endfor %}

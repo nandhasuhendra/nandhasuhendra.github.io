@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<article class="bg-white">
+<article class="bg-white dark:bg-gray-900">
   <!-- Header -->
-  <header class="border-b">
+  <header class="border-b dark:border-gray-800">
     <div class="max-w-3xl mx-auto px-6 py-12">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 leading-tight">{{ page.title }}</h1>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">{{ page.title }}</h1>
       {% if page.description %}
-      <p class="text-xl text-gray-600 mb-8 leading-relaxed">{{ page.description }}</p>
+      <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">{{ page.description }}</p>
       {% endif %}
     </div>
   </header>
