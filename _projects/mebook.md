@@ -7,7 +7,7 @@ tech_stack:
   - Hotwire
   - ViewComponent
   - Tailwind CSS
-image: /assets/images/projects/mebook.svg
+image: /assets/images/projects/mebook.webp
 live_url: https://mebookapp.com/
 status: In Development
 featured: true
