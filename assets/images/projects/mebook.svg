@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">Mebook project cover</title>
+  <desc id="desc">Mebook business management and booking platform</desc>
+  <rect width="1200" height="750" fill="#f7f8f5"/>
+  <rect x="70" y="70" width="1060" height="610" rx="36" fill="#ffffff" stroke="#d9ddd7" stroke-width="3"/>
+  <rect x="70" y="70" width="1060" height="70" rx="36" fill="#eef7f0"/>
+  <circle cx="115" cy="105" r="10" fill="#55a36f"/>
+  <circle cx="147" cy="105" r="10" fill="#cfd7cf"/>
+  <circle cx="179" cy="105" r="10" fill="#d7d0e8"/>
+  <rect x="115" y="190" width="250" height="435" rx="24" fill="#f3f5f1"/>
+  <rect x="405" y="190" width="680" height="115" rx="24" fill="#f3f5f1"/>
+  <rect x="405" y="345" width="320" height="280" rx="24" fill="#eef7f0"/>
+  <rect x="765" y="345" width="320" height="280" rx="24" fill="#f3f5f1"/>
+  <text x="145" y="255" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#202722">Mebook</text>
+  <text x="145" y="305" font-family="Arial, sans-serif" font-size="22" fill="#69736b">Business management, booking</text>
+  <text x="145" y="337" font-family="Arial, sans-serif" font-size="22" fill="#69736b">and storefront platform</text>
+  <rect x="145" y="390" width="150" height="42" rx="12" fill="#55a36f"/>
+  <text x="177" y="418" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">mebookapp.com</text>
+  <text x="440" y="238" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#202722">Dashboard</text>
+  <text x="440" y="275" font-family="Arial, sans-serif" font-size="18" fill="#69736b">Bookings · Customers · Catalog · Finance · Reports</text>
+  <path d="M455 565 C505 500 545 525 590 455 C625 400 670 440 700 390" fill="none" stroke="#55a36f" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="455" cy="565" r="9" fill="#55a36f"/>
+  <circle cx="590" cy="455" r="9" fill="#55a36f"/>
+  <circle cx="700" cy="390" r="9" fill="#55a36f"/>
+  <rect x="810" y="400" width="44" height="165" rx="10" fill="#dce9df"/>
+  <rect x="875" y="455" width="44" height="110" rx="10" fill="#b7d5c0"/>
+  <rect x="940" y="370" width="44" height="195" rx="10" fill="#83b893"/>
+  <rect x="1005" y="425" width="44" height="140" rx="10" fill="#55a36f"/>
+</svg>
